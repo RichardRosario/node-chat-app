@@ -4,13 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.1/flatly/bootstrap.min.css">
     <title>Node Chat App</title>
 </head>
 <body>
     <h1>My Chat App in NodeJS</h1>
     <p>Some Sample content here!</p>
 
+    <ol id="messages"></ol>
+
+    <form id="message-form">
+        <input name="message" type="text" placeholder="Message" />
+        <button>Send</button>
+    </form>
+
     <script src="/socket.io/socket.io.js"></script>
+    <script src="./js/libs/jquery.js"></script>
     <script src="/js/index.js"></script>
 </body>
 </html>
