@@ -1,0 +1,23 @@
+{
+  "name": "chat-app",
+  "version": "1.0.0",
+  "description": "chat app made in node",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+    "node": "10.4.1"
+  },
+  "keywords": [
+    "chat",
+    "app",
+    "node"
+  ],
+  "author": "Richard",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
