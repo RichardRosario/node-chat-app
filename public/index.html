@@ -4,21 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.1/flatly/bootstrap.min.css">
+    <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.1/flatly/bootstrap.min.css">-->
+    <link rel="stylesheet" href="css/styles.css" />
     <title>Node Chat App</title>
 </head>
-<body>
-    <h1>My Chat App in NodeJS</h1>
-    <div class="alert alert-dismissible alert-light">
-            <ol id="messages"></ol>
+<body class="chat">
+    <div class="chat__sidebar">
+    <h3>Users</h3>
+    <div id="users"></div>
     </div>
-    <div class="form-group">
+
+    <div class="chat__main">
+    <ol id="messages" class="chat__messages"></ol>
+
+    <div class="chat__footer">
         <form id="message-form">
-            <label class="col-form-label col-form-label-lg" for="inputLarge">Say something..</label>
-            <input name="message" class="form-control form-control-lg" type="text" placeholder="Message">
-            <button class="btn btn-outline-primary">Send Message</button>
+        <input name="message" type="text" placeholder="Message" autofocus autocomplete="off"/>
+        <button>Send</button>
         </form>
-        <button class="btn btn-outline-success" id="send-location">Send Location</button>
+        <button id="send-location">Send location</button>
+    </div>
     </div>
 
        
