@@ -12,3 +12,17 @@ describe('generateMessage', () => {
     })
 
 })
+
+var {generateLocationMessage} = require('./message');
+describe('generateLocationMessage',()=>{
+  it('should generate correct location object', () => {
+    var lat = 14.8474398;
+    var lng =  120.290424;
+    var from = 'Olongapo';
+    var url = `https://www.google.com/maps?q=${lat},${lng}`
+    var location = generateLocationMessage(from,lat,lng);
+    expect(location).toMatchObject({from,url});
+    expect(typeof location.createdAt).toBe('number');
+  });
+});
+
