@@ -22,12 +22,19 @@ io.on('connection', (socket) => {
     if (!isRealString(params.name) || !isRealString(params.room)) {
       return callback('Name and room name are required.');
     }
-    callback();
-  })
+
+
+    socket.join(params.room);
+  //socket.leave(params.room);
+  //io.emit - emit to every user
+  //socket.emit - emit message to certain user
+  //socket.broadcast - emit message to all users
 
   socket.emit('newMessage', generateMessage('Admin', 'Welcome to the chat app'));
   
-  socket.broadcast.emit('newMessage', generateMessage('Admin', 'New user joined'));
+  socket.broadcast.to(params.room).emit('newMessage', generateMessage('Admin', `${params.name} has joined`));
+    callback();
+  });
 
   socket.on('createMessage', (message, callback) => {
     console.log('createMessage', message);
